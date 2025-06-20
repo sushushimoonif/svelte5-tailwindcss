@@ -1,0 +1,109 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar for photo wall */
+.photo-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.photo-scroll::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 3px;
+}
+
+.photo-scroll::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 3px;
+}
+
+.photo-scroll::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Custom scrollbar for content areas */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Smooth transitions */
+.btn-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-transition:hover {
+  transform: translateY(-1px);
+}
+
+/* Icon button styles - 恢复原来的样式 */
+.icon-btn {
+  @apply rounded-full transition-all duration-200 hover:scale-110;
+}
+
+.icon-btn-like {
+  @apply text-gray-400 hover:text-green-400 hover:bg-green-400/10;
+}
+
+.icon-btn-question {
+  @apply text-gray-400 hover:text-yellow-400 hover:bg-yellow-400/10;
+}
+
+.icon-btn-dislike {
+  @apply text-gray-400 hover:text-red-400 hover:bg-red-400/10;
+}
+
+.icon-btn.active-like {
+  @apply text-green-400 bg-green-400/10;
+}
+
+.icon-btn.active-question {
+  @apply text-yellow-400 bg-yellow-400/10;
+}
+
+.icon-btn.active-dislike {
+  @apply text-red-400 bg-red-400/10;
+}
+
+/* Toast animations */
+@keyframes toast-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.toast-enter {
+  animation: toast-slide-in 0.3s ease-out;
+}
+
+.toast-exit {
+  animation: toast-slide-out 0.2s ease-in;
+}
